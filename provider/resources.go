@@ -12,27 +12,27 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package xyz
+package lxd
 
 import (
 	"fmt"
 	"path/filepath"
 	"unicode"
 
-	"github.com/pulumi/pulumi-xyz/provider/pkg/version"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
 	shim "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim"
 	shimv1 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v1"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/tokens"
-	"github.com/terraform-providers/terraform-provider-xyz/xyz"
+	"github.com/soupdiver/pulumi-lxd/provider/pkg/version"
+	"github.com/terraform-lxd/terraform-provider-lxd/lxd"
 )
 
 // all of the token components used below.
 const (
 	// packages:
-	mainPkg = "xyz"
+	mainPkg = "lxd"
 	// modules:
 	mainMod = "index" // the y module
 )
@@ -91,34 +91,40 @@ var managedByPulumi = &tfbridge.DefaultInfo{Value: "Managed by Pulumi"}
 // Provider returns additional overlaid schema and metadata associated with the provider..
 func Provider() tfbridge.ProviderInfo {
 	// Instantiate the Terraform provider
-	p := shimv1.NewProvider(xyz.Provider().(*schema.Provider))
+	p := shimv1.NewProvider(lxd.Provider().(*schema.Provider))
 
 	// Create a Pulumi provider mapping
 	prov := tfbridge.ProviderInfo{
 		P:           p,
-		Name:        "xyz",
-		Description: "A Pulumi package for creating and managing xyz cloud resources.",
-		Keywords:    []string{"pulumi", "xyz"},
+		Name:        "lxd",
+		Description: "A Pulumi package for creating and managing lxd cloud resources.",
+		Keywords:    []string{"pulumi", "lxd"},
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
-		Repository:  "https://github.com/pulumi/pulumi-xyz",
-		Config:      map[string]*tfbridge.SchemaInfo{
-			// Add any required configuration here, or remove the example below if
-			// no additional points are required.
-			// "region": {
-			// 	Type: makeType("region", "Region"),
-			// 	Default: &tfbridge.DefaultInfo{
-			// 		EnvVars: []string{"AWS_REGION", "AWS_DEFAULT_REGION"},
-			// 	},
-			// },
+		Repository:  "https://github.com/soupdiver/pulumi-lxd",
+		Config: map[string]*tfbridge.SchemaInfo{
+			"lxd_remote": {
+				Default: &tfbridge.DefaultInfo{
+					EnvVars: []string{"LXD_REMOTE"},
+				},
+			},
 		},
 		PreConfigureCallback: preConfigureCallback,
-		Resources:            map[string]*tfbridge.ResourceInfo{
+		Resources: map[string]*tfbridge.ResourceInfo{
 			// Map each resource in the Terraform provider to a Pulumi type. Two examples
 			// are below - the single line form is the common case. The multi-line form is
 			// needed only if you wish to override types or other default options.
 			//
-			// "aws_iam_role": {Tok: makeResource(mainMod, "IamRole")}
+			"lxd_cached_image":            {Tok: makeResource(mainMod, "CachedImage")},
+			"lxd_container":               {Tok: makeResource(mainMod, "Container")},
+			"lxd_container_file":          {Tok: makeResource(mainMod, "ContainerFile")},
+			"lxd_network":                 {Tok: makeResource(mainMod, "Network")},
+			"lxd_profile":                 {Tok: makeResource(mainMod, "Profile")},
+			"lxd_publish_image":           {Tok: makeResource(mainMod, "PublishImage")},
+			"lxd_snapshot":                {Tok: makeResource(mainMod, "Snapshot")},
+			"lxd_storage_pool":            {Tok: makeResource(mainMod, "StoragePool")},
+			"lxd_volume":                  {Tok: makeResource(mainMod, "Volume")},
+			"lxd_volume_container_attach": {Tok: makeResource(mainMod, "VolumeContainerAttach")},
 			//
 			// "aws_acm_certificate": {
 			// 	Tok: makeResource(mainMod, "Certificate"),
@@ -161,12 +167,12 @@ func Provider() tfbridge.ProviderInfo {
 			),
 			GenerateResourceContainerTypes: true,
 		},
-		CSharp: &tfbridge.CSharpInfo{
-			PackageReferences: map[string]string{
-				"Pulumi":                       "3.*",
-				"System.Collections.Immutable": "1.6.0",
-			},
-		},
+		// CSharp: &tfbridge.CSharpInfo{
+		// 	PackageReferences: map[string]string{
+		// 		"Pulumi":                       "3.*",
+		// 		"System.Collections.Immutable": "1.6.0",
+		// 	},
+		// },
 	}
 
 	prov.SetAutonaming(255, "-")
