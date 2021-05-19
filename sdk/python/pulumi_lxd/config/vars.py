@@ -38,7 +38,7 @@ The directory to look for existing LXD configuration. default = $HOME/.config/lx
 
 generate_client_certificates = __config__.get('generateClientCertificates')
 
-lxd_remotes = __config__.get('lxdRemotes') or _utilities.get_env('LXD_REMOTE')
+lxd_remotes = __config__.get('lxdRemotes')
 
 port = __config__.get('port')
 

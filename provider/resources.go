@@ -102,12 +102,12 @@ func Provider() tfbridge.ProviderInfo {
 		License:     "Apache-2.0",
 		Homepage:    "https://pulumi.io",
 		Repository:  "https://github.com/soupdiver/pulumi-lxd",
-		Config: map[string]*tfbridge.SchemaInfo{
-			"lxd_remote": {
-				Default: &tfbridge.DefaultInfo{
-					EnvVars: []string{"LXD_REMOTE"},
-				},
-			},
+		Config:      map[string]*tfbridge.SchemaInfo{
+			// "lxd_remote": {
+			// 	Default: &tfbridge.DefaultInfo{
+			// 		EnvVars: []string{"LXD_REMOTE"},
+			// 	},
+			// },
 		},
 		PreConfigureCallback: preConfigureCallback,
 		Resources: map[string]*tfbridge.ResourceInfo{

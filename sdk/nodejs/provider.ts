@@ -41,7 +41,7 @@ export class Provider extends pulumi.ProviderResource {
             inputs["acceptRemoteCertificate"] = pulumi.output(args ? args.acceptRemoteCertificate : undefined).apply(JSON.stringify);
             inputs["configDir"] = args ? args.configDir : undefined;
             inputs["generateClientCertificates"] = pulumi.output(args ? args.generateClientCertificates : undefined).apply(JSON.stringify);
-            inputs["lxdRemotes"] = pulumi.output((args ? args.lxdRemotes : undefined) ?? <any>utilities.getEnv("LXD_REMOTE")).apply(JSON.stringify);
+            inputs["lxdRemotes"] = pulumi.output(args ? args.lxdRemotes : undefined).apply(JSON.stringify);
             inputs["refreshInterval"] = args ? args.refreshInterval : undefined;
         }
         if (!opts.version) {

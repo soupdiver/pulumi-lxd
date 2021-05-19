@@ -24,11 +24,7 @@ func GetGenerateClientCertificates(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "lxd:generateClientCertificates")
 }
 func GetLxdRemotes(ctx *pulumi.Context) string {
-	v, err := config.Try(ctx, "lxd:lxdRemotes")
-	if err == nil {
-		return v
-	}
-	return getEnvOrDefault(pulumi.StringArray{}, parseEnvStringArray, "LXD_REMOTE").(pulumi.StringArray)
+	return config.Get(ctx, "lxd:lxdRemotes")
 }
 func GetPort(ctx *pulumi.Context) string {
 	return config.Get(ctx, "lxd:port")

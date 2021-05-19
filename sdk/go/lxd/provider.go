@@ -25,9 +25,6 @@ func NewProvider(ctx *pulumi.Context,
 		args = &ProviderArgs{}
 	}
 
-	if args.LxdRemotes == nil {
-		args.LxdRemotes = ProviderLxdRemoteArray(getEnvOrDefault(pulumi.StringArray{}, parseEnvStringArray, "LXD_REMOTE").(pulumi.StringArray))
-	}
 	var resource Provider
 	err := ctx.RegisterResource("pulumi:providers:lxd", name, args, &resource, opts...)
 	if err != nil {

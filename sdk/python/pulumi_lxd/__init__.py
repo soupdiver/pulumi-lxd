@@ -30,10 +30,26 @@ _utilities.register(
 [
  {
   "pkg": "lxd",
-  "mod": "index/cachedImage",
+  "mod": "index/containerFile",
   "fqn": "pulumi_lxd",
   "classes": {
-   "lxd:index/cachedImage:CachedImage": "CachedImage"
+   "lxd:index/containerFile:ContainerFile": "ContainerFile"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/profile",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/profile:Profile": "Profile"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/storagePool",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/storagePool:StoragePool": "StoragePool"
   }
  },
  {
@@ -42,14 +58,6 @@ _utilities.register(
   "fqn": "pulumi_lxd",
   "classes": {
    "lxd:index/container:Container": "Container"
-  }
- },
- {
-  "pkg": "lxd",
-  "mod": "index/containerFile",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/containerFile:ContainerFile": "ContainerFile"
   }
  },
  {
@@ -70,22 +78,6 @@ _utilities.register(
  },
  {
   "pkg": "lxd",
-  "mod": "index/volumeContainerAttach",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/volumeContainerAttach:VolumeContainerAttach": "VolumeContainerAttach"
-  }
- },
- {
-  "pkg": "lxd",
-  "mod": "index/profile",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/profile:Profile": "Profile"
-  }
- },
- {
-  "pkg": "lxd",
   "mod": "index/snapshot",
   "fqn": "pulumi_lxd",
   "classes": {
@@ -94,18 +86,26 @@ _utilities.register(
  },
  {
   "pkg": "lxd",
-  "mod": "index/storagePool",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/storagePool:StoragePool": "StoragePool"
-  }
- },
- {
-  "pkg": "lxd",
   "mod": "index/volume",
   "fqn": "pulumi_lxd",
   "classes": {
    "lxd:index/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/volumeContainerAttach",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/volumeContainerAttach:VolumeContainerAttach": "VolumeContainerAttach"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/cachedImage",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/cachedImage:CachedImage": "CachedImage"
   }
  }
 ]

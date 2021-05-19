@@ -17,7 +17,7 @@ export let address: string | undefined = __config.get("address");
  */
 export let configDir: string | undefined = __config.get("configDir");
 export let generateClientCertificates: boolean | undefined = __config.getObject<boolean>("generateClientCertificates");
-export let lxdRemotes: outputs.config.LxdRemotes[] | undefined = __config.getObject<outputs.config.LxdRemotes[]>("lxdRemotes") || <any>utilities.getEnv("LXD_REMOTE");
+export let lxdRemotes: outputs.config.LxdRemotes[] | undefined = __config.getObject<outputs.config.LxdRemotes[]>("lxdRemotes");
 export let port: string | undefined = __config.get("port");
 /**
  * How often to poll during state changes (default 10s)

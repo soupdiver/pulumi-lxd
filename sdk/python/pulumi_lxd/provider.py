@@ -31,8 +31,6 @@ class ProviderArgs:
             pulumi.set(__self__, "config_dir", config_dir)
         if generate_client_certificates is not None:
             pulumi.set(__self__, "generate_client_certificates", generate_client_certificates)
-        if lxd_remotes is None:
-            lxd_remotes = _utilities.get_env('LXD_REMOTE')
         if lxd_remotes is not None:
             pulumi.set(__self__, "lxd_remotes", lxd_remotes)
         if refresh_interval is not None:
@@ -163,8 +161,6 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["accept_remote_certificate"] = pulumi.Output.from_input(accept_remote_certificate).apply(pulumi.runtime.to_json) if accept_remote_certificate is not None else None
             __props__.__dict__["config_dir"] = config_dir
             __props__.__dict__["generate_client_certificates"] = pulumi.Output.from_input(generate_client_certificates).apply(pulumi.runtime.to_json) if generate_client_certificates is not None else None
-            if lxd_remotes is None:
-                lxd_remotes = _utilities.get_env('LXD_REMOTE')
             __props__.__dict__["lxd_remotes"] = pulumi.Output.from_input(lxd_remotes).apply(pulumi.runtime.to_json) if lxd_remotes is not None else None
             __props__.__dict__["refresh_interval"] = refresh_interval
         super(Provider, __self__).__init__(
