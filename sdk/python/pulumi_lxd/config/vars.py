@@ -10,11 +10,11 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'lxd_remote',
     'accept_remote_certificate',
     'address',
     'config_dir',
     'generate_client_certificates',
-    'lxd_remotes',
     'port',
     'refresh_interval',
     'remote',
@@ -23,6 +23,8 @@ __all__ = [
 ]
 
 __config__ = pulumi.Config('lxd')
+
+lxd_remote = __config__.get('LXDRemote')
 
 accept_remote_certificate = __config__.get('acceptRemoteCertificate')
 """
@@ -37,8 +39,6 @@ The directory to look for existing LXD configuration. default = $HOME/.config/lx
 """
 
 generate_client_certificates = __config__.get('generateClientCertificates')
-
-lxd_remotes = __config__.get('lxdRemotes')
 
 port = __config__.get('port')
 

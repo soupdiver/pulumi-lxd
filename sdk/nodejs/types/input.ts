@@ -26,7 +26,7 @@ export interface ProfileDevice {
     type: pulumi.Input<string>;
 }
 
-export interface ProviderLxdRemote {
+export interface ProviderLXDRemote {
     address?: pulumi.Input<string>;
     default?: pulumi.Input<boolean>;
     name: pulumi.Input<string>;

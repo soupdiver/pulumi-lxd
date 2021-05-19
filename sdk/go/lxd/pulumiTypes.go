@@ -352,7 +352,7 @@ func (o ProfileDeviceArrayOutput) Index(i pulumi.IntInput) ProfileDeviceOutput {
 	}).(ProfileDeviceOutput)
 }
 
-type ProviderLxdRemote struct {
+type ProviderLXDRemote struct {
 	Address  *string `pulumi:"address"`
 	Default  *bool   `pulumi:"default"`
 	Name     string  `pulumi:"name"`
@@ -361,18 +361,18 @@ type ProviderLxdRemote struct {
 	Scheme   *string `pulumi:"scheme"`
 }
 
-// ProviderLxdRemoteInput is an input type that accepts ProviderLxdRemoteArgs and ProviderLxdRemoteOutput values.
-// You can construct a concrete instance of `ProviderLxdRemoteInput` via:
+// ProviderLXDRemoteInput is an input type that accepts ProviderLXDRemoteArgs and ProviderLXDRemoteOutput values.
+// You can construct a concrete instance of `ProviderLXDRemoteInput` via:
 //
-//          ProviderLxdRemoteArgs{...}
-type ProviderLxdRemoteInput interface {
+//          ProviderLXDRemoteArgs{...}
+type ProviderLXDRemoteInput interface {
 	pulumi.Input
 
-	ToProviderLxdRemoteOutput() ProviderLxdRemoteOutput
-	ToProviderLxdRemoteOutputWithContext(context.Context) ProviderLxdRemoteOutput
+	ToProviderLXDRemoteOutput() ProviderLXDRemoteOutput
+	ToProviderLXDRemoteOutputWithContext(context.Context) ProviderLXDRemoteOutput
 }
 
-type ProviderLxdRemoteArgs struct {
+type ProviderLXDRemoteArgs struct {
 	Address  pulumi.StringPtrInput `pulumi:"address"`
 	Default  pulumi.BoolPtrInput   `pulumi:"default"`
 	Name     pulumi.StringInput    `pulumi:"name"`
@@ -381,99 +381,99 @@ type ProviderLxdRemoteArgs struct {
 	Scheme   pulumi.StringPtrInput `pulumi:"scheme"`
 }
 
-func (ProviderLxdRemoteArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProviderLxdRemote)(nil)).Elem()
+func (ProviderLXDRemoteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderLXDRemote)(nil)).Elem()
 }
 
-func (i ProviderLxdRemoteArgs) ToProviderLxdRemoteOutput() ProviderLxdRemoteOutput {
-	return i.ToProviderLxdRemoteOutputWithContext(context.Background())
+func (i ProviderLXDRemoteArgs) ToProviderLXDRemoteOutput() ProviderLXDRemoteOutput {
+	return i.ToProviderLXDRemoteOutputWithContext(context.Background())
 }
 
-func (i ProviderLxdRemoteArgs) ToProviderLxdRemoteOutputWithContext(ctx context.Context) ProviderLxdRemoteOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderLxdRemoteOutput)
+func (i ProviderLXDRemoteArgs) ToProviderLXDRemoteOutputWithContext(ctx context.Context) ProviderLXDRemoteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderLXDRemoteOutput)
 }
 
-// ProviderLxdRemoteArrayInput is an input type that accepts ProviderLxdRemoteArray and ProviderLxdRemoteArrayOutput values.
-// You can construct a concrete instance of `ProviderLxdRemoteArrayInput` via:
+// ProviderLXDRemoteArrayInput is an input type that accepts ProviderLXDRemoteArray and ProviderLXDRemoteArrayOutput values.
+// You can construct a concrete instance of `ProviderLXDRemoteArrayInput` via:
 //
-//          ProviderLxdRemoteArray{ ProviderLxdRemoteArgs{...} }
-type ProviderLxdRemoteArrayInput interface {
+//          ProviderLXDRemoteArray{ ProviderLXDRemoteArgs{...} }
+type ProviderLXDRemoteArrayInput interface {
 	pulumi.Input
 
-	ToProviderLxdRemoteArrayOutput() ProviderLxdRemoteArrayOutput
-	ToProviderLxdRemoteArrayOutputWithContext(context.Context) ProviderLxdRemoteArrayOutput
+	ToProviderLXDRemoteArrayOutput() ProviderLXDRemoteArrayOutput
+	ToProviderLXDRemoteArrayOutputWithContext(context.Context) ProviderLXDRemoteArrayOutput
 }
 
-type ProviderLxdRemoteArray []ProviderLxdRemoteInput
+type ProviderLXDRemoteArray []ProviderLXDRemoteInput
 
-func (ProviderLxdRemoteArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderLxdRemote)(nil)).Elem()
+func (ProviderLXDRemoteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProviderLXDRemote)(nil)).Elem()
 }
 
-func (i ProviderLxdRemoteArray) ToProviderLxdRemoteArrayOutput() ProviderLxdRemoteArrayOutput {
-	return i.ToProviderLxdRemoteArrayOutputWithContext(context.Background())
+func (i ProviderLXDRemoteArray) ToProviderLXDRemoteArrayOutput() ProviderLXDRemoteArrayOutput {
+	return i.ToProviderLXDRemoteArrayOutputWithContext(context.Background())
 }
 
-func (i ProviderLxdRemoteArray) ToProviderLxdRemoteArrayOutputWithContext(ctx context.Context) ProviderLxdRemoteArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(ProviderLxdRemoteArrayOutput)
+func (i ProviderLXDRemoteArray) ToProviderLXDRemoteArrayOutputWithContext(ctx context.Context) ProviderLXDRemoteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProviderLXDRemoteArrayOutput)
 }
 
-type ProviderLxdRemoteOutput struct{ *pulumi.OutputState }
+type ProviderLXDRemoteOutput struct{ *pulumi.OutputState }
 
-func (ProviderLxdRemoteOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*ProviderLxdRemote)(nil)).Elem()
+func (ProviderLXDRemoteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProviderLXDRemote)(nil)).Elem()
 }
 
-func (o ProviderLxdRemoteOutput) ToProviderLxdRemoteOutput() ProviderLxdRemoteOutput {
+func (o ProviderLXDRemoteOutput) ToProviderLXDRemoteOutput() ProviderLXDRemoteOutput {
 	return o
 }
 
-func (o ProviderLxdRemoteOutput) ToProviderLxdRemoteOutputWithContext(ctx context.Context) ProviderLxdRemoteOutput {
+func (o ProviderLXDRemoteOutput) ToProviderLXDRemoteOutputWithContext(ctx context.Context) ProviderLXDRemoteOutput {
 	return o
 }
 
-func (o ProviderLxdRemoteOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderLxdRemote) *string { return v.Address }).(pulumi.StringPtrOutput)
+func (o ProviderLXDRemoteOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderLXDRemote) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderLxdRemoteOutput) Default() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v ProviderLxdRemote) *bool { return v.Default }).(pulumi.BoolPtrOutput)
+func (o ProviderLXDRemoteOutput) Default() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ProviderLXDRemote) *bool { return v.Default }).(pulumi.BoolPtrOutput)
 }
 
-func (o ProviderLxdRemoteOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v ProviderLxdRemote) string { return v.Name }).(pulumi.StringOutput)
+func (o ProviderLXDRemoteOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ProviderLXDRemote) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o ProviderLxdRemoteOutput) Password() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderLxdRemote) *string { return v.Password }).(pulumi.StringPtrOutput)
+func (o ProviderLXDRemoteOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderLXDRemote) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderLxdRemoteOutput) Port() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderLxdRemote) *string { return v.Port }).(pulumi.StringPtrOutput)
+func (o ProviderLXDRemoteOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderLXDRemote) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-func (o ProviderLxdRemoteOutput) Scheme() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ProviderLxdRemote) *string { return v.Scheme }).(pulumi.StringPtrOutput)
+func (o ProviderLXDRemoteOutput) Scheme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProviderLXDRemote) *string { return v.Scheme }).(pulumi.StringPtrOutput)
 }
 
-type ProviderLxdRemoteArrayOutput struct{ *pulumi.OutputState }
+type ProviderLXDRemoteArrayOutput struct{ *pulumi.OutputState }
 
-func (ProviderLxdRemoteArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]ProviderLxdRemote)(nil)).Elem()
+func (ProviderLXDRemoteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProviderLXDRemote)(nil)).Elem()
 }
 
-func (o ProviderLxdRemoteArrayOutput) ToProviderLxdRemoteArrayOutput() ProviderLxdRemoteArrayOutput {
+func (o ProviderLXDRemoteArrayOutput) ToProviderLXDRemoteArrayOutput() ProviderLXDRemoteArrayOutput {
 	return o
 }
 
-func (o ProviderLxdRemoteArrayOutput) ToProviderLxdRemoteArrayOutputWithContext(ctx context.Context) ProviderLxdRemoteArrayOutput {
+func (o ProviderLXDRemoteArrayOutput) ToProviderLXDRemoteArrayOutputWithContext(ctx context.Context) ProviderLXDRemoteArrayOutput {
 	return o
 }
 
-func (o ProviderLxdRemoteArrayOutput) Index(i pulumi.IntInput) ProviderLxdRemoteOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderLxdRemote {
-		return vs[0].([]ProviderLxdRemote)[vs[1].(int)]
-	}).(ProviderLxdRemoteOutput)
+func (o ProviderLXDRemoteArrayOutput) Index(i pulumi.IntInput) ProviderLXDRemoteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProviderLXDRemote {
+		return vs[0].([]ProviderLXDRemote)[vs[1].(int)]
+	}).(ProviderLXDRemoteOutput)
 }
 
 func init() {
@@ -483,6 +483,6 @@ func init() {
 	pulumi.RegisterOutputType(ContainerFileTypeArrayOutput{})
 	pulumi.RegisterOutputType(ProfileDeviceOutput{})
 	pulumi.RegisterOutputType(ProfileDeviceArrayOutput{})
-	pulumi.RegisterOutputType(ProviderLxdRemoteOutput{})
-	pulumi.RegisterOutputType(ProviderLxdRemoteArrayOutput{})
+	pulumi.RegisterOutputType(ProviderLXDRemoteOutput{})
+	pulumi.RegisterOutputType(ProviderLXDRemoteArrayOutput{})
 }

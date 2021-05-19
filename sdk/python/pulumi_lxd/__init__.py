@@ -30,14 +30,6 @@ _utilities.register(
 [
  {
   "pkg": "lxd",
-  "mod": "index/containerFile",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/containerFile:ContainerFile": "ContainerFile"
-  }
- },
- {
-  "pkg": "lxd",
   "mod": "index/profile",
   "fqn": "pulumi_lxd",
   "classes": {
@@ -50,6 +42,22 @@ _utilities.register(
   "fqn": "pulumi_lxd",
   "classes": {
    "lxd:index/storagePool:StoragePool": "StoragePool"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/volumeContainerAttach",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/volumeContainerAttach:VolumeContainerAttach": "VolumeContainerAttach"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/cachedImage",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/cachedImage:CachedImage": "CachedImage"
   }
  },
  {
@@ -70,6 +78,22 @@ _utilities.register(
  },
  {
   "pkg": "lxd",
+  "mod": "index/volume",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/volume:Volume": "Volume"
+  }
+ },
+ {
+  "pkg": "lxd",
+  "mod": "index/containerFile",
+  "fqn": "pulumi_lxd",
+  "classes": {
+   "lxd:index/containerFile:ContainerFile": "ContainerFile"
+  }
+ },
+ {
+  "pkg": "lxd",
   "mod": "index/publishImage",
   "fqn": "pulumi_lxd",
   "classes": {
@@ -82,30 +106,6 @@ _utilities.register(
   "fqn": "pulumi_lxd",
   "classes": {
    "lxd:index/snapshot:Snapshot": "Snapshot"
-  }
- },
- {
-  "pkg": "lxd",
-  "mod": "index/volume",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/volume:Volume": "Volume"
-  }
- },
- {
-  "pkg": "lxd",
-  "mod": "index/volumeContainerAttach",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/volumeContainerAttach:VolumeContainerAttach": "VolumeContainerAttach"
-  }
- },
- {
-  "pkg": "lxd",
-  "mod": "index/cachedImage",
-  "fqn": "pulumi_lxd",
-  "classes": {
-   "lxd:index/cachedImage:CachedImage": "CachedImage"
   }
  }
 ]

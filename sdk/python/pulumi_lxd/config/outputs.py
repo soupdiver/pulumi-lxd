@@ -9,11 +9,11 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
-    'LxdRemotes',
+    'LXDRemote',
 ]
 
 @pulumi.output_type
-class LxdRemotes(dict):
+class LXDRemote(dict):
     def __init__(__self__, *,
                  name: str,
                  address: Optional[str] = None,

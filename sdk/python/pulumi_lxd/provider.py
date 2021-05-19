@@ -14,10 +14,10 @@ __all__ = ['ProviderArgs', 'Provider']
 @pulumi.input_type
 class ProviderArgs:
     def __init__(__self__, *,
+                 lxd_remote: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderLXDRemoteArgs']]]] = None,
                  accept_remote_certificate: Optional[pulumi.Input[bool]] = None,
                  config_dir: Optional[pulumi.Input[str]] = None,
                  generate_client_certificates: Optional[pulumi.Input[bool]] = None,
-                 lxd_remotes: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderLxdRemoteArgs']]]] = None,
                  refresh_interval: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a Provider resource.
@@ -25,16 +25,25 @@ class ProviderArgs:
         :param pulumi.Input[str] config_dir: The directory to look for existing LXD configuration. default = $HOME/.config/lxc
         :param pulumi.Input[str] refresh_interval: How often to poll during state changes (default 10s)
         """
+        if lxd_remote is not None:
+            pulumi.set(__self__, "lxd_remote", lxd_remote)
         if accept_remote_certificate is not None:
             pulumi.set(__self__, "accept_remote_certificate", accept_remote_certificate)
         if config_dir is not None:
             pulumi.set(__self__, "config_dir", config_dir)
         if generate_client_certificates is not None:
             pulumi.set(__self__, "generate_client_certificates", generate_client_certificates)
-        if lxd_remotes is not None:
-            pulumi.set(__self__, "lxd_remotes", lxd_remotes)
         if refresh_interval is not None:
             pulumi.set(__self__, "refresh_interval", refresh_interval)
+
+    @property
+    @pulumi.getter(name="LXDRemote")
+    def lxd_remote(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProviderLXDRemoteArgs']]]]:
+        return pulumi.get(self, "lxd_remote")
+
+    @lxd_remote.setter
+    def lxd_remote(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderLXDRemoteArgs']]]]):
+        pulumi.set(self, "lxd_remote", value)
 
     @property
     @pulumi.getter(name="acceptRemoteCertificate")
@@ -70,15 +79,6 @@ class ProviderArgs:
         pulumi.set(self, "generate_client_certificates", value)
 
     @property
-    @pulumi.getter(name="lxdRemotes")
-    def lxd_remotes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProviderLxdRemoteArgs']]]]:
-        return pulumi.get(self, "lxd_remotes")
-
-    @lxd_remotes.setter
-    def lxd_remotes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProviderLxdRemoteArgs']]]]):
-        pulumi.set(self, "lxd_remotes", value)
-
-    @property
     @pulumi.getter(name="refreshInterval")
     def refresh_interval(self) -> Optional[pulumi.Input[str]]:
         """
@@ -96,10 +96,10 @@ class Provider(pulumi.ProviderResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 lxd_remote: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderLXDRemoteArgs']]]]] = None,
                  accept_remote_certificate: Optional[pulumi.Input[bool]] = None,
                  config_dir: Optional[pulumi.Input[str]] = None,
                  generate_client_certificates: Optional[pulumi.Input[bool]] = None,
-                 lxd_remotes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderLxdRemoteArgs']]]]] = None,
                  refresh_interval: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -141,10 +141,10 @@ class Provider(pulumi.ProviderResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 lxd_remote: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderLXDRemoteArgs']]]]] = None,
                  accept_remote_certificate: Optional[pulumi.Input[bool]] = None,
                  config_dir: Optional[pulumi.Input[str]] = None,
                  generate_client_certificates: Optional[pulumi.Input[bool]] = None,
-                 lxd_remotes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ProviderLxdRemoteArgs']]]]] = None,
                  refresh_interval: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         if opts is None:
@@ -158,10 +158,10 @@ class Provider(pulumi.ProviderResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = ProviderArgs.__new__(ProviderArgs)
 
+            __props__.__dict__["lxd_remote"] = pulumi.Output.from_input(lxd_remote).apply(pulumi.runtime.to_json) if lxd_remote is not None else None
             __props__.__dict__["accept_remote_certificate"] = pulumi.Output.from_input(accept_remote_certificate).apply(pulumi.runtime.to_json) if accept_remote_certificate is not None else None
             __props__.__dict__["config_dir"] = config_dir
             __props__.__dict__["generate_client_certificates"] = pulumi.Output.from_input(generate_client_certificates).apply(pulumi.runtime.to_json) if generate_client_certificates is not None else None
-            __props__.__dict__["lxd_remotes"] = pulumi.Output.from_input(lxd_remotes).apply(pulumi.runtime.to_json) if lxd_remotes is not None else None
             __props__.__dict__["refresh_interval"] = refresh_interval
         super(Provider, __self__).__init__(
             'lxd',

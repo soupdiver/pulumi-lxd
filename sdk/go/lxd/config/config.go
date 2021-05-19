@@ -8,6 +8,10 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
 )
 
+func GetLXDRemote(ctx *pulumi.Context) string {
+	return config.Get(ctx, "lxd:lxdremote")
+}
+
 // Accept the server certificate
 func GetAcceptRemoteCertificate(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "lxd:acceptRemoteCertificate")
@@ -22,9 +26,6 @@ func GetConfigDir(ctx *pulumi.Context) string {
 }
 func GetGenerateClientCertificates(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "lxd:generateClientCertificates")
-}
-func GetLxdRemotes(ctx *pulumi.Context) string {
-	return config.Get(ctx, "lxd:lxdRemotes")
 }
 func GetPort(ctx *pulumi.Context) string {
 	return config.Get(ctx, "lxd:port")

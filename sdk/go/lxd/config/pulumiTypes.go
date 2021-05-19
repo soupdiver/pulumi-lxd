@@ -10,7 +10,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-type LxdRemotes struct {
+type LXDRemote struct {
 	Address  *string `pulumi:"address"`
 	Default  *bool   `pulumi:"default"`
 	Name     string  `pulumi:"name"`
@@ -19,18 +19,18 @@ type LxdRemotes struct {
 	Scheme   *string `pulumi:"scheme"`
 }
 
-// LxdRemotesInput is an input type that accepts LxdRemotesArgs and LxdRemotesOutput values.
-// You can construct a concrete instance of `LxdRemotesInput` via:
+// LXDRemoteInput is an input type that accepts LXDRemoteArgs and LXDRemoteOutput values.
+// You can construct a concrete instance of `LXDRemoteInput` via:
 //
-//          LxdRemotesArgs{...}
-type LxdRemotesInput interface {
+//          LXDRemoteArgs{...}
+type LXDRemoteInput interface {
 	pulumi.Input
 
-	ToLxdRemotesOutput() LxdRemotesOutput
-	ToLxdRemotesOutputWithContext(context.Context) LxdRemotesOutput
+	ToLXDRemoteOutput() LXDRemoteOutput
+	ToLXDRemoteOutputWithContext(context.Context) LXDRemoteOutput
 }
 
-type LxdRemotesArgs struct {
+type LXDRemoteArgs struct {
 	Address  pulumi.StringPtrInput `pulumi:"address"`
 	Default  pulumi.BoolPtrInput   `pulumi:"default"`
 	Name     pulumi.StringInput    `pulumi:"name"`
@@ -39,102 +39,102 @@ type LxdRemotesArgs struct {
 	Scheme   pulumi.StringPtrInput `pulumi:"scheme"`
 }
 
-func (LxdRemotesArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*LxdRemotes)(nil)).Elem()
+func (LXDRemoteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LXDRemote)(nil)).Elem()
 }
 
-func (i LxdRemotesArgs) ToLxdRemotesOutput() LxdRemotesOutput {
-	return i.ToLxdRemotesOutputWithContext(context.Background())
+func (i LXDRemoteArgs) ToLXDRemoteOutput() LXDRemoteOutput {
+	return i.ToLXDRemoteOutputWithContext(context.Background())
 }
 
-func (i LxdRemotesArgs) ToLxdRemotesOutputWithContext(ctx context.Context) LxdRemotesOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(LxdRemotesOutput)
+func (i LXDRemoteArgs) ToLXDRemoteOutputWithContext(ctx context.Context) LXDRemoteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LXDRemoteOutput)
 }
 
-// LxdRemotesArrayInput is an input type that accepts LxdRemotesArray and LxdRemotesArrayOutput values.
-// You can construct a concrete instance of `LxdRemotesArrayInput` via:
+// LXDRemoteArrayInput is an input type that accepts LXDRemoteArray and LXDRemoteArrayOutput values.
+// You can construct a concrete instance of `LXDRemoteArrayInput` via:
 //
-//          LxdRemotesArray{ LxdRemotesArgs{...} }
-type LxdRemotesArrayInput interface {
+//          LXDRemoteArray{ LXDRemoteArgs{...} }
+type LXDRemoteArrayInput interface {
 	pulumi.Input
 
-	ToLxdRemotesArrayOutput() LxdRemotesArrayOutput
-	ToLxdRemotesArrayOutputWithContext(context.Context) LxdRemotesArrayOutput
+	ToLXDRemoteArrayOutput() LXDRemoteArrayOutput
+	ToLXDRemoteArrayOutputWithContext(context.Context) LXDRemoteArrayOutput
 }
 
-type LxdRemotesArray []LxdRemotesInput
+type LXDRemoteArray []LXDRemoteInput
 
-func (LxdRemotesArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]LxdRemotes)(nil)).Elem()
+func (LXDRemoteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LXDRemote)(nil)).Elem()
 }
 
-func (i LxdRemotesArray) ToLxdRemotesArrayOutput() LxdRemotesArrayOutput {
-	return i.ToLxdRemotesArrayOutputWithContext(context.Background())
+func (i LXDRemoteArray) ToLXDRemoteArrayOutput() LXDRemoteArrayOutput {
+	return i.ToLXDRemoteArrayOutputWithContext(context.Background())
 }
 
-func (i LxdRemotesArray) ToLxdRemotesArrayOutputWithContext(ctx context.Context) LxdRemotesArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(LxdRemotesArrayOutput)
+func (i LXDRemoteArray) ToLXDRemoteArrayOutputWithContext(ctx context.Context) LXDRemoteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LXDRemoteArrayOutput)
 }
 
-type LxdRemotesOutput struct{ *pulumi.OutputState }
+type LXDRemoteOutput struct{ *pulumi.OutputState }
 
-func (LxdRemotesOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*LxdRemotes)(nil)).Elem()
+func (LXDRemoteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LXDRemote)(nil)).Elem()
 }
 
-func (o LxdRemotesOutput) ToLxdRemotesOutput() LxdRemotesOutput {
+func (o LXDRemoteOutput) ToLXDRemoteOutput() LXDRemoteOutput {
 	return o
 }
 
-func (o LxdRemotesOutput) ToLxdRemotesOutputWithContext(ctx context.Context) LxdRemotesOutput {
+func (o LXDRemoteOutput) ToLXDRemoteOutputWithContext(ctx context.Context) LXDRemoteOutput {
 	return o
 }
 
-func (o LxdRemotesOutput) Address() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v LxdRemotes) *string { return v.Address }).(pulumi.StringPtrOutput)
+func (o LXDRemoteOutput) Address() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LXDRemote) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
 
-func (o LxdRemotesOutput) Default() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v LxdRemotes) *bool { return v.Default }).(pulumi.BoolPtrOutput)
+func (o LXDRemoteOutput) Default() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v LXDRemote) *bool { return v.Default }).(pulumi.BoolPtrOutput)
 }
 
-func (o LxdRemotesOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v LxdRemotes) string { return v.Name }).(pulumi.StringOutput)
+func (o LXDRemoteOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v LXDRemote) string { return v.Name }).(pulumi.StringOutput)
 }
 
-func (o LxdRemotesOutput) Password() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v LxdRemotes) *string { return v.Password }).(pulumi.StringPtrOutput)
+func (o LXDRemoteOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LXDRemote) *string { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-func (o LxdRemotesOutput) Port() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v LxdRemotes) *string { return v.Port }).(pulumi.StringPtrOutput)
+func (o LXDRemoteOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LXDRemote) *string { return v.Port }).(pulumi.StringPtrOutput)
 }
 
-func (o LxdRemotesOutput) Scheme() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v LxdRemotes) *string { return v.Scheme }).(pulumi.StringPtrOutput)
+func (o LXDRemoteOutput) Scheme() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LXDRemote) *string { return v.Scheme }).(pulumi.StringPtrOutput)
 }
 
-type LxdRemotesArrayOutput struct{ *pulumi.OutputState }
+type LXDRemoteArrayOutput struct{ *pulumi.OutputState }
 
-func (LxdRemotesArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]LxdRemotes)(nil)).Elem()
+func (LXDRemoteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LXDRemote)(nil)).Elem()
 }
 
-func (o LxdRemotesArrayOutput) ToLxdRemotesArrayOutput() LxdRemotesArrayOutput {
+func (o LXDRemoteArrayOutput) ToLXDRemoteArrayOutput() LXDRemoteArrayOutput {
 	return o
 }
 
-func (o LxdRemotesArrayOutput) ToLxdRemotesArrayOutputWithContext(ctx context.Context) LxdRemotesArrayOutput {
+func (o LXDRemoteArrayOutput) ToLXDRemoteArrayOutputWithContext(ctx context.Context) LXDRemoteArrayOutput {
 	return o
 }
 
-func (o LxdRemotesArrayOutput) Index(i pulumi.IntInput) LxdRemotesOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LxdRemotes {
-		return vs[0].([]LxdRemotes)[vs[1].(int)]
-	}).(LxdRemotesOutput)
+func (o LXDRemoteArrayOutput) Index(i pulumi.IntInput) LXDRemoteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LXDRemote {
+		return vs[0].([]LXDRemote)[vs[1].(int)]
+	}).(LXDRemoteOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(LxdRemotesOutput{})
-	pulumi.RegisterOutputType(LxdRemotesArrayOutput{})
+	pulumi.RegisterOutputType(LXDRemoteOutput{})
+	pulumi.RegisterOutputType(LXDRemoteArrayOutput{})
 }

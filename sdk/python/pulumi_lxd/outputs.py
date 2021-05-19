@@ -12,7 +12,7 @@ __all__ = [
     'ContainerDevice',
     'ContainerFile',
     'ProfileDevice',
-    'ProviderLxdRemote',
+    'ProviderLXDRemote',
 ]
 
 @pulumi.output_type
@@ -147,7 +147,7 @@ class ProfileDevice(dict):
 
 
 @pulumi.output_type
-class ProviderLxdRemote(dict):
+class ProviderLXDRemote(dict):
     def __init__(__self__, *,
                  name: str,
                  address: Optional[str] = None,

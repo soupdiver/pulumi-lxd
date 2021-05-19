@@ -38,10 +38,10 @@ export class Provider extends pulumi.ProviderResource {
         let inputs: pulumi.Inputs = {};
         opts = opts || {};
         {
+            inputs["LXDRemote"] = pulumi.output(args ? args.LXDRemote : undefined).apply(JSON.stringify);
             inputs["acceptRemoteCertificate"] = pulumi.output(args ? args.acceptRemoteCertificate : undefined).apply(JSON.stringify);
             inputs["configDir"] = args ? args.configDir : undefined;
             inputs["generateClientCertificates"] = pulumi.output(args ? args.generateClientCertificates : undefined).apply(JSON.stringify);
-            inputs["lxdRemotes"] = pulumi.output(args ? args.lxdRemotes : undefined).apply(JSON.stringify);
             inputs["refreshInterval"] = args ? args.refreshInterval : undefined;
         }
         if (!opts.version) {
@@ -55,6 +55,7 @@ export class Provider extends pulumi.ProviderResource {
  * The set of arguments for constructing a Provider resource.
  */
 export interface ProviderArgs {
+    readonly LXDRemote?: pulumi.Input<pulumi.Input<inputs.ProviderLXDRemote>[]>;
     /**
      * Accept the server certificate
      */
@@ -64,7 +65,6 @@ export interface ProviderArgs {
      */
     readonly configDir?: pulumi.Input<string>;
     readonly generateClientCertificates?: pulumi.Input<boolean>;
-    readonly lxdRemotes?: pulumi.Input<pulumi.Input<inputs.ProviderLxdRemote>[]>;
     /**
      * How often to poll during state changes (default 10s)
      */

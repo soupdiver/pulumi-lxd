@@ -34,24 +34,24 @@ func NewProvider(ctx *pulumi.Context,
 }
 
 type providerArgs struct {
+	LXDRemote []ProviderLXDRemote `pulumi:"LXDRemote"`
 	// Accept the server certificate
 	AcceptRemoteCertificate *bool `pulumi:"acceptRemoteCertificate"`
 	// The directory to look for existing LXD configuration. default = $HOME/.config/lxc
-	ConfigDir                  *string             `pulumi:"configDir"`
-	GenerateClientCertificates *bool               `pulumi:"generateClientCertificates"`
-	LxdRemotes                 []ProviderLxdRemote `pulumi:"lxdRemotes"`
+	ConfigDir                  *string `pulumi:"configDir"`
+	GenerateClientCertificates *bool   `pulumi:"generateClientCertificates"`
 	// How often to poll during state changes (default 10s)
 	RefreshInterval *string `pulumi:"refreshInterval"`
 }
 
 // The set of arguments for constructing a Provider resource.
 type ProviderArgs struct {
+	LXDRemote ProviderLXDRemoteArrayInput
 	// Accept the server certificate
 	AcceptRemoteCertificate pulumi.BoolPtrInput
 	// The directory to look for existing LXD configuration. default = $HOME/.config/lxc
 	ConfigDir                  pulumi.StringPtrInput
 	GenerateClientCertificates pulumi.BoolPtrInput
-	LxdRemotes                 ProviderLxdRemoteArrayInput
 	// How often to poll during state changes (default 10s)
 	RefreshInterval pulumi.StringPtrInput
 }

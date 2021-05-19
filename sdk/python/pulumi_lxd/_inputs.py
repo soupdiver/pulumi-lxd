@@ -12,7 +12,7 @@ __all__ = [
     'ContainerDeviceArgs',
     'ContainerFileArgs',
     'ProfileDeviceArgs',
-    'ProviderLxdRemoteArgs',
+    'ProviderLXDRemoteArgs',
 ]
 
 @pulumi.input_type
@@ -180,7 +180,7 @@ class ProfileDeviceArgs:
 
 
 @pulumi.input_type
-class ProviderLxdRemoteArgs:
+class ProviderLXDRemoteArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
                  address: Optional[pulumi.Input[str]] = None,

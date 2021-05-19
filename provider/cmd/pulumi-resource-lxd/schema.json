@@ -14,6 +14,12 @@
     },
     "config": {
         "variables": {
+            "LXDRemote": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/types/lxd:config/LXDRemote:LXDRemote"
+                }
+            },
             "acceptRemoteCertificate": {
                 "type": "boolean",
                 "description": "Accept the server certificate\n"
@@ -27,12 +33,6 @@
             },
             "generateClientCertificates": {
                 "type": "boolean"
-            },
-            "lxdRemotes": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/types/lxd:config/lxdRemotes:lxdRemotes"
-                }
             },
             "port": {
                 "type": "string"
@@ -53,7 +53,7 @@
         }
     },
     "types": {
-        "lxd:config/lxdRemotes:lxdRemotes": {
+        "lxd:config/LXDRemote:LXDRemote": {
             "properties": {
                 "address": {
                     "type": "string"
@@ -222,7 +222,7 @@
                 "type"
             ]
         },
-        "lxd:index/ProviderLxdRemote:ProviderLxdRemote": {
+        "lxd:index/ProviderLXDRemote:ProviderLXDRemote": {
             "properties": {
                 "address": {
                     "type": "string",
@@ -287,6 +287,12 @@
     "provider": {
         "description": "The provider type for the lxd package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
         "inputProperties": {
+            "LXDRemote": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/types/lxd:index/ProviderLXDRemote:ProviderLXDRemote"
+                }
+            },
             "acceptRemoteCertificate": {
                 "type": "boolean",
                 "description": "Accept the server certificate\n"
@@ -297,12 +303,6 @@
             },
             "generateClientCertificates": {
                 "type": "boolean"
-            },
-            "lxdRemotes": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/types/lxd:index/ProviderLxdRemote:ProviderLxdRemote"
-                }
             },
             "refreshInterval": {
                 "type": "string",

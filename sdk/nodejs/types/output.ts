@@ -26,7 +26,7 @@ export interface ProfileDevice {
     type: string;
 }
 
-export interface ProviderLxdRemote {
+export interface ProviderLXDRemote {
     address?: string;
     default?: boolean;
     name?: string;
@@ -35,7 +35,7 @@ export interface ProviderLxdRemote {
     scheme?: string;
 }
 export namespace config {
-    export interface LxdRemotes {
+    export interface LXDRemote {
         address?: string;
         default?: boolean;
         name: string;
